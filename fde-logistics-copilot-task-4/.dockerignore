@@ -1,0 +1,29 @@
+# Keep the build context small and the image clean.
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Local state - logs are written inside the container at runtime
+logs/*
+!logs/.gitkeep
+*.log
+
+# Never bake secrets or VCS history into an image
+.env
+.git/
+.github/
+
+# Not needed at runtime
+docs/
+*.md
+!README.md
+.DS_Store

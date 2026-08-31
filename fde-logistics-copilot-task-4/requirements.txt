@@ -1,0 +1,21 @@
+# ---------------------------------------------------------------------------
+# Logistics Operations Copilot - dependencies
+#
+# The assignment prototype (python app.py, the agent, all four tools and the
+# monitoring layer) uses ONLY the Python standard library. Nothing below is
+# required to run or grade it.
+#
+# The packages here enable the optional production-style layers:
+#   - FastAPI REST API  (api/)
+#   - Pydantic schemas  (models/)
+#   - automated tests   (tests/)
+# ---------------------------------------------------------------------------
+
+# --- optional: REST API layer ---
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+pydantic>=2.7,<3.0
+
+# --- optional: tests and CI ---
+pytest>=8.0,<9.0
+httpx>=0.27,<1.0

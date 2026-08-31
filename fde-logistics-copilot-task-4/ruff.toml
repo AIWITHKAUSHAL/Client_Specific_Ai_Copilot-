@@ -1,0 +1,14 @@
+# Lint configuration. CI runs `ruff check .` as a non-blocking job.
+target-version = "py310"
+line-length = 100
+exclude = [".venv", "logs"]
+
+[lint]
+# pycodestyle errors, pyflakes, import order, bugbear, comprehensions, pyupgrade.
+select = ["E", "F", "I", "B", "C4", "UP"]
+ignore = [
+    "E501",    # line length is reported by the formatter, not the linter
+    "UP006",   # typing.Dict/List kept for readability on Python 3.10 runtimes
+    "UP035",
+    "UP045",
+]

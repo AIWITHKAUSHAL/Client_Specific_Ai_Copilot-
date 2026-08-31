@@ -1,0 +1,16 @@
+# Minimal local stack: just the copilot API.
+# No database or message broker is required by the prototype.
+services:
+  copilot-api:
+    build: .
+    image: fde-logistics-copilot:latest
+    container_name: fde-logistics-copilot
+    ports:
+      - "8000:8000"
+    environment:
+      COPILOT_ENV: docker
+      COPILOT_LOG_LEVEL: INFO
+    volumes:
+      # Keep the monitoring log on the host so it can be inspected.
+      - ./logs:/app/logs
+    restart: unless-stopped

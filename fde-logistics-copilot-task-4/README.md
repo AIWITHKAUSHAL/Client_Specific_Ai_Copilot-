@@ -17,6 +17,11 @@ traceable to a section of it.
 python app.py          # no API keys, no cloud, no database, no Docker
 ```
 
+> **Repository sync check (7 September 2026):** the CLI smoke test and the
+> complete automated suite were run against this checkout: **138 tests pass**.
+> The commands, endpoints, file tree, and supporting assets documented below
+> match the current repository.
+
 Built in two layers on purpose:
 
 | Layer | What it is | How to check it |
@@ -378,9 +383,30 @@ fde-logistics-copilot-task-4/
 │   ├── HLD.md  LLD.md  api-design.md
 │   ├── security.md  testing-evaluation.md
 │   ├── production-readiness.md  cost-estimation.md
+├── project-assets/            # supporting diagrams and workshop/reference PDFs
+│   ├── images/                # role, flow, structure, and documentation visuals
+│   └── pdfs/                  # discovery questionnaire and project transcript
 ├── logs/                      # copilot.log is written here
 └── .github/workflows/ci.yml
 ```
+
+### Supporting project assets
+
+The assets below complement the executable code and formal documents. Some
+visuals describe the **target production pattern** (SSO, external APIs, RAG,
+and centralized observability), not functionality already enabled in the
+offline prototype. The "Prototype vs production" table in §11 is the source of
+truth for that distinction.
+
+| Asset | Purpose |
+|---|---|
+| [`fde-logistics-copilot-role-overview.png`](project-assets/images/fde-logistics-copilot-role-overview.png) | One-page view of the client problem, FDE role, solution flow, and production journey. Dashboard figures in the illustration are examples, not measured project results; use §13 and §21 for measured figures. |
+| [`fde-logistics-copilot-project-structure.png`](project-assets/images/fde-logistics-copilot-project-structure.png) | Visual guide to the repository's main Python modules and request flow. |
+| [`documentation-folder-guide.png`](project-assets/images/documentation-folder-guide.png) | Reading guide for the eight documents under `docs/`. |
+| [`end-to-end-application-flow.png`](project-assets/images/end-to-end-application-flow.png) | Conceptual production request flow with authentication, APIs, resilience, and external systems. |
+| [`generic-ai-copilot-project-structure.png`](project-assets/images/generic-ai-copilot-project-structure.png) | Generic reference structure for adapting the copilot pattern beyond this POC. |
+| [`fde-client-discovery-questionnaire-246-questions.pdf`](project-assets/pdfs/fde-client-discovery-questionnaire-246-questions.pdf) | Client-discovery workshop questionnaire. |
+| [`fde-logistics-copilot-conversation-transcript.pdf`](project-assets/pdfs/fde-logistics-copilot-conversation-transcript.pdf) | Supporting project conversation transcript. |
 
 ## 15. Installation
 
@@ -629,3 +655,5 @@ the client.
 | How it reaches production | `docs/production-readiness.md`, `docs/PRD.md` §21 |
 | What it would cost | `docs/cost-estimation.md`, `docs/PRD.md` §22 |
 | What changes for the next client | `client-customization.md` — 21 sections |
+| The visual project overview | `project-assets/images/fde-logistics-copilot-role-overview.png` |
+| Client-discovery workshop prompts | `project-assets/pdfs/fde-client-discovery-questionnaire-246-questions.pdf` |
